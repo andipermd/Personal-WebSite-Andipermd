@@ -23,6 +23,32 @@ function textSequence(i) {
   }
 }
 
+const navList = document.querySelectorAll(".menu li");
+
+// jika nav about di klik
+navList[1].addEventListener("click", function () {
+  mainContentOn();
+  portfolioContent.classList.add("displayNone");
+  contactContent.classList.add("displayNone");
+
+  aboutContent.classList.remove("displayNone");
+});
+
+navList[2].addEventListener("click", function () {
+  mainContentOn();
+  aboutContent.classList.add("displayNone");
+  contactContent.classList.add("displayNone");
+
+  portfolioContent.classList.remove("displayNone");
+});
+
+navList[3].addEventListener("click", function () {
+  mainContentOn();
+  aboutContent.classList.add("displayNone");
+  portfolioContent.classList.add("displayNone");
+  contactContent.classList.remove("displayNone");
+});
+
 function mainContentOn() {
   mainContent.classList.remove("displayNone");
 }
@@ -55,7 +81,6 @@ for (let i = 0; i < listContent.length; i++) {
       aboutContent.classList.add("displayNone");
       portfolioContent.classList.add("displayNone");
       contactContent.classList.add("displayNone");
-
       blogContent.classList.remove("displayNone");
     }
   });
@@ -81,10 +106,6 @@ for (let i = 0; i < listContent.length; i++) {
 
 hamburger.addEventListener("click", function () {
   menu.classList.toggle("slide");
-});
-
-clock.addEventListener("click", function () {
-  this.href = "http://127.0.0.1:5500/projek/clock/clock.html";
 });
 
 /*=============== SWIPER JS ===============*/
